@@ -11,6 +11,8 @@ import {
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import AdminNavbarLinks from "./AdminNavbarLinks";
+import BgSignUp from "assets/img/BgSignUp.png";
+import Logo from "assets/img/logo2.svg";
 
 export default function AdminNavbar(props) {
   const [scrolled, setScrolled] = useState(false);
@@ -102,7 +104,7 @@ export default function AdminNavbar(props) {
       }}
       pt="8px"
       top="18px"
-      w={{ sm: "calc(100vw - 30px)", xl: "calc(100vw - 75px - 275px)" }}
+      w={{ sm: "calc(100vw - 30px)", xl: "calc(100vw - 75px)" }}
     >
       <Flex
         w="100%"
@@ -113,37 +115,17 @@ export default function AdminNavbar(props) {
         alignItems={{ xl: "center" }}
       >
         <Box mb={{ sm: "8px", md: "0px" }}>
-          <Breadcrumb>
-            <BreadcrumbItem color={mainText}>
-              <BreadcrumbLink href="#" color={secondaryText}>
-                Pages
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-
-            <BreadcrumbItem color={mainText}>
-              <BreadcrumbLink href="#" color={mainText}>
-                {brandText}
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-          </Breadcrumb>
-          {/* Here we create navbar brand, based on route name */}
-          <Link
-            color={mainText}
-            href="#"
-            bg="inherit"
-            borderRadius="inherit"
-            fontWeight="bold"
-            _hover={{ color: { mainText } }}
-            _active={{
-              bg: "inherit",
-              transform: "none",
-              borderColor: "transparent",
-            }}
-            _focus={{
-              boxShadow: "none",
-            }}
-          >
-            {brandText}
+          <Link href="#">
+            {" "}
+            <Box
+              height={"50px"}
+              width={"300px"}
+              bgRepeat="no-repeat"
+              zIndex="1"
+              top="0"
+              bgImage={Logo}
+              bgSize="contain"
+            ></Box>
           </Link>
         </Box>
         <Box ms="auto" w={{ sm: "100%", md: "unset" }}>
